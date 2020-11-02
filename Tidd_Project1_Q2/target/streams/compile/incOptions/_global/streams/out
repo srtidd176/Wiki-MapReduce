@@ -1,0 +1,20 @@
+[debug] Created transactional ClassFileManager with tempDir = C:\Users\river\IdeaProjects\Tidd_Project1\Tidd_Project1_Q2\target\scala-2.13\classes.bak
+[debug] About to delete class files:
+[debug] 	Q2Reducer.class
+[debug] 	Driver.class
+[debug] 	Driver$.class
+[debug] 	Q2Mapper.class
+[debug] 	Driver$delayedInit$body.class
+[debug] We backup class files:
+[debug] 	Q2Reducer.class
+[debug] 	Driver.class
+[debug] 	Driver$.class
+[debug] 	Q2Mapper.class
+[debug] 	Driver$delayedInit$body.class
+[debug] Registering generated classes:
+[debug] 	Q2Reducer.class
+[debug] 	Driver.class
+[debug] 	Driver$.class
+[debug] 	Q2Mapper.class
+[debug] 	Driver$delayedInit$body.class
+[debug] Removing the temporary directory used for backing up class files: C:\Users\river\IdeaProjects\Tidd_Project1\Tidd_Project1_Q2\target\scala-2.13\classes.bak

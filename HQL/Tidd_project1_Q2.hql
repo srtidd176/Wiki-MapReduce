@@ -1,0 +1,25 @@
+-- Top 5 Wiki articles with the highest fraction of readers
+-- follow an interal link to another Wiki article
+
+-- Create table that gets the full link
+-- count from an article
+CREATE EXTERNAL TABLE IF NOT EXISTS CLICKSTREAM_LINK_TOTAL
+  (
+    WIKI_TITLE STRING,
+    LINK_TOTAL INT
+  )
+  ROW FORMAT DELIMITED
+  FIELDS TERMINATED BY "\t";
+
+LOAD DATA INPATH '/user/srtidd/outputs/clickstream-links' INTO TABLE CLICKSTREAM_LINK_TOTAL;
+
+
+-- Create a table that has data about the fraction of
+-- viewers that click an internal link
+CREATE TABLE IF NOT EXISTS VIEW_LINK_FRACTION AS
+SELECT CLICKSTREAM_LINK_TOTAL.WIKI_TITLE AS WIKI_TITLE, TOTAL_VIEWS, LINK_TOTAL, (100*(LINK_TOTAL/TOTAL_VIEWS)) AS PERCENTAGE
+FROM WIKI_SEP_TOTAL_VIEWS JOIN CLICKSTREAM_LINK_TOTAL on (WIKI_SEP_TOTAL_VIEWS.WIKI_TITLE = CLICKSTREAM_LINK_TOTAL.WIKI_TITLE)''
+
+SELECT * FROM  VIEW_LINK_FRACTION
+ORDER BY TOTAL_VIEWS DESC
+LIMIT 5;

@@ -1,0 +1,12 @@
+[debug] > Exec(assembly, None, None)
+[debug] Evaluating tasks: assembly
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\river\IdeaProjects\Tidd_Project1\Tidd_Project1_Q1\target\scala-2.13\classes ...
+[info] done compiling
+[info] Strategy 'deduplicate' was applied to 5 files (Run the task at debug level to see details)
+[info] Strategy 'discard' was applied to 189 files (Run the task at debug level to see details)
+[info] Strategy 'filterDistinctLines' was applied to 9 files (Run the task at debug level to see details)
+[success] Total time: 21 s, completed Oct 30, 2020 5:06:02 PM
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)

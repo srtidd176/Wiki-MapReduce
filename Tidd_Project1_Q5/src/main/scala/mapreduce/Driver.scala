@@ -1,0 +1,5 @@
+package mapreduce
+
+object Driver {
+
+}
