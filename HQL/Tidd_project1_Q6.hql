@@ -1,6 +1,6 @@
 
 -- Create a table and query to locate the top 5 wiki articles
--- that are closer to having 50% of their readers clicking on links 
+-- that are closer to having 50% of their readers clicking on links
 -- than other articles
 
 
@@ -10,5 +10,6 @@ FROM VIEW_LINK_FRACTION;
 
 
 SELECT * FROM HALF_LINKS
+WHERE CLOSENESS_TO_HALF != 0.0
 ORDER BY CLOSENESS_TO_HALF ASC
-LIMIT 5;
+LIMIT 10;

@@ -1,0 +1,7 @@
+[debug] > Exec(all {file:/C:/Users/river/IdeaProjects/Tidd_Project1_Q3/}tidd_project1_q3/products {file:/C:/Users/river/IdeaProjects/Tidd_Project1_Q3/}tidd_project1_q3/test:products, None, None)
+[debug] Evaluating tasks: Compile / products, Test / products
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[success] Total time: 0 s, completed Nov 3, 2020 5:07:22 PM
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)

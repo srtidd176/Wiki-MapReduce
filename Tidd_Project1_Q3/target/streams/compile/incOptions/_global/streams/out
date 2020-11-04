@@ -1,0 +1,14 @@
+[debug] Created transactional ClassFileManager with tempDir = C:\Users\river\IdeaProjects\Tidd_Project1\Tidd_Project1_Q3\target\scala-2.13\classes.bak
+[debug] About to delete class files:
+[debug] 	MaxLinkWritable.class
+[debug] We backup class files:
+[debug] 	MaxLinkWritable.class
+[debug] Registering generated classes:
+[debug] 	MaxLinkWritable.class
+[debug] About to delete class files:
+[debug] 	Q3Mapper.class
+[debug] We backup class files:
+[debug] 	Q3Mapper.class
+[debug] Registering generated classes:
+[debug] 	Q3Mapper.class
+[debug] Removing the temporary directory used for backing up class files: C:\Users\river\IdeaProjects\Tidd_Project1\Tidd_Project1_Q3\target\scala-2.13\classes.bak

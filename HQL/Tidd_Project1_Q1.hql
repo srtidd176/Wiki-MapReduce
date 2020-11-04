@@ -1,8 +1,12 @@
 -- Return top 5 most viewed Wiki articles
 
+CREATE DATABASE WIKIDB;
+
+USE WIKIDB;
+
 --  Table with the total views of
 -- each article in the month of September 2020
-CREATE EXTERNAL TABLE WIKI_SEP_TOTAL_VIEWS
+CREATE EXTERNAL TABLE IF NOT EXISTS WIKI_SEP_TOTAL_VIEWS
 (
   WIKI_TITLE STRING,
   TOTAL_VIEWS INT
@@ -12,7 +16,7 @@ FIELDS TERMINATED BY "\t";
 
 -- Table with the total views of
 -- each article on the date of October 20th
-CREATE  EXTERNAL TABLE WIKI_OCT_TOTAL_VIEWS
+CREATE  EXTERNAL TABLE IF NOT EXISTS WIKI_OCT_TOTAL_VIEWS
 (
   WIKI_TITLE STRING,
   TOTAL_VIEWS INT

@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat
 object Driver extends App{
 
   if(args.length != 2){
-    print("Usage: Q1Driver <input dir> <output dir>")
+    print("Usage: Q2Driver <input dir> <output dir>")
     System.exit(-1)
   }
 

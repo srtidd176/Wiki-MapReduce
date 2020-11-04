@@ -1,0 +1,11 @@
+[debug] > Exec(assembly, None, None)
+[debug] Evaluating tasks: assembly
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] Strategy 'deduplicate' was applied to 5 files (Run the task at debug level to see details)
+[info] Strategy 'discard' was applied to 189 files (Run the task at debug level to see details)
+[info] Strategy 'filterDistinctLines' was applied to 9 files (Run the task at debug level to see details)
+[debug] Forcing garbage collection...
+[success] Total time: 165 s (02:45), completed Nov 3, 2020 12:20:16 PM
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)
