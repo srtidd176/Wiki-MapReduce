@@ -3,7 +3,7 @@
 -- revert previous revisions (assuming these are corrections
 -- to vandalism)
 
-CREATE EXTERNAL IF NOT EXISTS TABLE WIKI_EDITS
+CREATE EXTERNAL TABLE IF NOT EXISTS WIKI_EDITS
 (
   WIKI_DB STRING,
   EVENT_ENTITY STRING,
@@ -79,12 +79,19 @@ CREATE EXTERNAL IF NOT EXISTS TABLE WIKI_EDITS
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY '\t';
 
-LOAD DATA INPATH "/user/srtidd/outputs/wiki-edits" INTO TABLE WIKI-EDITS
+LOAD DATA INPATH "/user/srtidd/inputs/wiki-edits" INTO TABLE WIKI_EDITS;
 
 
 
 
 CREATE TABLE WIKI_VANDALS AS
-SELECT page_title_historical, revision_seconds_to_identity_revert
+SELECT page_title_historical, revision_seconds_to_identity_revert, (revision_seconds_to_identity_revert/86400) as revision_days_to_identity_revert, ((revision_seconds_to_identity_revert/86400)/30) as revert_month_fraction_time
 FROM WIKI_EDITS
-WHERE WIKI_EDITS.wiki_db == "enwiki";
+WHERE WIKI_EDITS.wiki_db = "enwiki" AND revision_seconds_to_identity_revert >= 0;
+
+CREATE TABLE WIKI_VANDALS_VIEWS AS
+SELECT page_title_historical, revision_days_to_identity_revert, (revert_month_fraction_time*TOTAL_VIEWS) AS vandal_total_views
+FROM WIKI_VANDALS JOIN WIKI_SEP_TOTAL_VIEWS ON (WIKI_VANDALS.page_title_historical = WIKI_SEP_TOTAL_VIEWS.WIKI_TITLE);
+
+SELECT AVG(vandal_total_views) AS AVG_VANDAL_PAGE_VIEWERS
+FROM WIKI_VANDALS_VIEWS;
