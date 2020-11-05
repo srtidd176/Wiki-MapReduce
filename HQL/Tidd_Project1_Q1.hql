@@ -1,4 +1,4 @@
--- Return top 5 most viewed Wiki articles
+-- Return top 10 most viewed Wiki articles
 
 CREATE DATABASE WIKIDB;
 
@@ -27,10 +27,8 @@ FIELDS TERMINATED BY "\t";
 LOAD DATA INPATH '/user/srtidd/outputs/october-views' INTO TABLE WIKI_OCT_TOTAL_VIEWS;
 LOAD DATA INPATH '/user/srtidd/outputs/september-views' INTO TABLE WIKI_SEP_TOTAL_VIEWS;
 
-SELECT * from WIKI_OCT_TOTAL_VIEWS
-ORDER BY TOTAL_VIEWS DESC
-limit 10;
 
-SELECT * from WIKI_SEP_TOTAL_VIEWS
+-- Query for final results
+SELECT * from WIKI_OCT_TOTAL_VIEWS
 ORDER BY TOTAL_VIEWS DESC
 limit 10;

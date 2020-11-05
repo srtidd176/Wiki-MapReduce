@@ -93,5 +93,6 @@ CREATE TABLE WIKI_VANDALS_VIEWS AS
 SELECT page_title_historical, revision_days_to_identity_revert, (revert_month_fraction_time*TOTAL_VIEWS) AS vandal_total_views
 FROM WIKI_VANDALS JOIN WIKI_SEP_TOTAL_VIEWS ON (WIKI_VANDALS.page_title_historical = WIKI_SEP_TOTAL_VIEWS.WIKI_TITLE);
 
+-- Query for final results
 SELECT AVG(vandal_total_views) AS AVG_VANDAL_PAGE_VIEWERS
 FROM WIKI_VANDALS_VIEWS;

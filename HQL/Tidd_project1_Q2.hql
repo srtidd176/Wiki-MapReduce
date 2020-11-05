@@ -1,4 +1,4 @@
--- Top 5 Wiki articles with the highest fraction of readers
+-- Top 10 Wiki articles with the highest fraction of readers
 -- follow an interal link to another Wiki article
 
 -- Create table that gets the full link
@@ -20,6 +20,8 @@ SELECT CLICKSTREAM_LINK_TOTAL.WIKI_TITLE AS WIKI_TITLE, TOTAL_VIEWS, LINK_TOTAL,
 FROM WIKI_SEP_TOTAL_VIEWS JOIN CLICKSTREAM_LINK_TOTAL on (WIKI_SEP_TOTAL_VIEWS.WIKI_TITLE = CLICKSTREAM_LINK_TOTAL.WIKI_TITLE)
 WHERE LINK_TOTAL < TOTAL_VIEWS;
 
+
+-- Query for final results
 SELECT * FROM  VIEW_LINK_FRACTION
 ORDER BY PERCENTAGE DESC
 LIMIT 10;
